@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"STARASO",
-    "path":"STARASO.yyp",
+    "name":"Planetas",
+    "path":"folders/Planetas.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
