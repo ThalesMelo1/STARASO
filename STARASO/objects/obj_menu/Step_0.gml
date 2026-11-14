@@ -13,3 +13,14 @@ i(_cima) {
 	index--;
 	if (index < 0) index = op_max - 1;
 }
+
+if (_confirmar) {
+	switch (index) {
+		case 0:
+			room_goto(planeta);
+			break;
+		case 1:
+			game_end();
+			break;
+	}
+}
