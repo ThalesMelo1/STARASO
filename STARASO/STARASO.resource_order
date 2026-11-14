@@ -1,12 +1,11 @@
 {
-  "FolderOrderSettings":[
-    {"name":"Menu","order":3,"path":"folders/Menu.yy",},
-  ],
+  "FolderOrderSettings":[],
   "ResourceOrderSettings":[
     {"name":"obj_menu","order":3,"path":"objects/obj_menu/obj_menu.yy",},
-    {"name":"planeta","order":4,"path":"rooms/planeta/planeta.yy",},
+    {"name":"planeta","order":1,"path":"rooms/planeta/planeta.yy",},
     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
-    {"name":"Background","order":2,"path":"sprites/Background/Background.yy",},
-    {"name":"TileSet1","order":5,"path":"tilesets/TileSet1/TileSet1.yy",},
+    {"name":"Background","order":3,"path":"sprites/Background/Background.yy",},
+    {"name":"BackGroundMenu","order":4,"path":"sprites/BackGroundMenu/BackGroundMenu.yy",},
+    {"name":"TileSet1","order":2,"path":"tilesets/TileSet1/TileSet1.yy",},
   ],
 }

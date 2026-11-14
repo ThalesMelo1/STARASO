@@ -26,6 +26,7 @@
     {"id":{"name":"planeta","path":"rooms/planeta/planeta.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
     {"id":{"name":"Background","path":"sprites/Background/Background.yy",},},
+    {"id":{"name":"BackGroundMenu","path":"sprites/BackGroundMenu/BackGroundMenu.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
   ],
   "resourceType":"GMProject",
