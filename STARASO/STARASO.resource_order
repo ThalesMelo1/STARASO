@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"Personagem Principal","order":6,"path":"folders/Personagem Principal.yy",},
     {"name":"Planetas","order":4,"path":"folders/Planetas.yy",},
   ],
   "ResourceOrderSettings":[
