@@ -1,0 +1,10 @@
+{
+  "FolderOrderSettings":[
+    {"name":"Menu","order":3,"path":"folders/Menu.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"obj_menu","order":3,"path":"objects/obj_menu/obj_menu.yy",},
+    {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
+    {"name":"Sprite1","order":2,"path":"sprites/Sprite1/Sprite1.yy",},
+  ],
+}
