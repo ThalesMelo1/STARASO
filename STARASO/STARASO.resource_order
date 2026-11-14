@@ -7,5 +7,6 @@
     {"name":"planeta","order":4,"path":"rooms/planeta/planeta.yy",},
     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
     {"name":"Background","order":2,"path":"sprites/Background/Background.yy",},
+    {"name":"TileSet1","order":5,"path":"tilesets/TileSet1/TileSet1.yy",},
   ],
 }
