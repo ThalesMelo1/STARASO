@@ -79,6 +79,17 @@ if point_in_rectangle(
 global.agua = clamp(global.agua, 0, 999);
 global.comida = clamp(global.comida, 0, 999);
 
+var comprar_item = function(_item) {
+    if (_item.possui || global.dinheiro < _item.preco ||
+        global.inventario + _item.tamanho > global.inventario_max) {
+        return;
+    }
+
+    _item.possui = true;
+    global.dinheiro -= _item.preco;
+    global.inventario += _item.tamanho;
+};
+
 //Itens
 
 
@@ -87,11 +98,9 @@ if point_in_rectangle(
     mx, my,
     btn_x1, py + 55,
     btn_x2, py + 85
-) && (global.dinheiro >= global.filtro_agua.preco)
+)
 {
-    global.filtro_agua.possui = true;
-	global.dinheiro -= global.filtro_agua.preco;
-	
+    comprar_item(global.filtro_agua);
 }
 
 // IA
@@ -101,7 +110,7 @@ if point_in_rectangle(
     btn_x2, py + 130
 )
 {
-    global.computador_ia.possui = true;
+    comprar_item(global.computador_ia);
 }
 
 // RASTREADOR
@@ -111,7 +120,7 @@ if point_in_rectangle(
     btn_x2, py + 175
 )
 {
-    global.rastreador.possui = true;
+    comprar_item(global.rastreador);
 }
 
 // MOTOR
@@ -121,7 +130,7 @@ if point_in_rectangle(
     btn_x2, py + 220
 )
 {
-    global.motor.possui = true;
+    comprar_item(global.motor);
 }
 
 // EXTRATOR
@@ -131,5 +140,5 @@ if point_in_rectangle(
     btn_x2, py + 265
 )
 {
-    global.extrator.possui = true;
+    comprar_item(global.extrator);
 }
