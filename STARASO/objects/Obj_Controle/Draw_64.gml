@@ -123,7 +123,8 @@ if (item_selecionado != noone) {
 
     // Foto maior
     if (sprite_exists(st.sprite)) {
-        draw_sprite_ext(st.sprite, 0, pop_x + 30, pop_y + 70, 2, 2, 0, c_white, 1);
+        var photo_scale = min(100 / sprite_get_width(st.sprite), 100 / sprite_get_height(st.sprite));
+        draw_sprite_ext(st.sprite, 0, pop_x + 30, pop_y + 70, photo_scale, photo_scale, 0, c_white, 1);
     } else {
         draw_set_color(c_dkgray);
         draw_rectangle(pop_x + 30, pop_y + 70, pop_x + 130, pop_y + 170, false);

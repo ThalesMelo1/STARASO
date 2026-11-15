@@ -10,10 +10,10 @@ item_selecionado = noone;
 
 // Estruturas corrigidas
 global.filtro_agua   = { possui: false, tamanho: 3, preco: 15, desc: "Filters polluted water for safe consumption", sprite: spr_filtroAgua };
-global.computador_ia = { possui: false, tamanho: 3, preco: 25, desc: "Processa dados complexos da base.", sprite: spr_mockup };
-global.rastreador    = { possui: false, tamanho: 2, preco: 10, desc: "Rastreia recursos pelo mapa.", sprite: spr_mockup };
-global.motor         = { possui: false, tamanho: 4, preco: 40, desc: "Aumenta a velocidade dos sistemas.", sprite: spr_mockup };
-global.extrator      = { possui: false, tamanho: 3, preco: 30, desc: "Extrai minerios valiosos.", sprite: spr_mockup };
+global.computador_ia = { possui: false, tamanho: 3, preco: 25, desc: "Processa dados complexos da base.", sprite: spr_computadorIA };
+global.rastreador    = { possui: false, tamanho: 2, preco: 10, desc: "Rastreia recursos pelo mapa.", sprite: spr_rastreadorMetais };
+global.motor         = { possui: false, tamanho: 4, preco: 40, desc: "Aumenta a velocidade dos sistemas.", sprite: spr_motor };
+global.extrator      = { possui: false, tamanho: 3, preco: 30, desc: "Extrai minerios valiosos.", sprite: spr_extratorAgua };
 
 itens_lista = [
     { nome: "Water Filter", struct: global.filtro_agua },
