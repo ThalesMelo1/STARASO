@@ -10,19 +10,21 @@ var altura = camera_get_view_height(camera_id);
 var tile_w = sprite_get_width(sprite_index);
 var tile_h = sprite_get_height(sprite_index);
 
-// Calcula o deslocamento do parallax
-var deslocamento = (cam_x * fator_parallax) mod tile_w;
+// Calcula o deslocamento combinado
+var deslocamento = (
+    cam_x * fator_parallax + deslocamento_auto
+) mod tile_w;
 
-// Posição inicial para desenhar
+// Posição inicial
 var inicio_x = cam_x - deslocamento - tile_w;
 
-// Mantém as montanhas na parte inferior da câmera
+// Posicionamento vertical
 var pos_y = cam_y + altura - tile_h;
 
-// Quantidade de repetições necessárias
+// Quantidade de repetições
 var quantidade = ceil(largura / tile_w) + 2;
 
-// Desenha as montanhas horizontalmente
+// Desenha as montanhas
 for (var i = 0; i < quantidade; i++) {
 
     draw_sprite(
