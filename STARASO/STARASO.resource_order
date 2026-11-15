@@ -1,9 +1,14 @@
 {
   "FolderOrderSettings":[
+<<<<<<< Updated upstream
     {"name":"Terra","order":9,"path":"folders/Terra.yy",},
     {"name":"Personagem Principal","order":6,"path":"folders/Personagem Principal.yy",},
     {"name":"Planetas","order":4,"path":"folders/Planetas.yy",},
     {"name":"Teste","order":8,"path":"folders/Teste.yy",},
+=======
+    {"name":"Planeta","order":5,"path":"folders/Planeta.yy",},
+    {"name":"PersonagemPrincipal","order":4,"path":"folders/PersonagemPrincipal.yy",},
+>>>>>>> Stashed changes
   ],
   "ResourceOrderSettings":[
     {"name":"Obj_Controle","order":3,"path":"objects/Obj_Controle/Obj_Controle.yy",},
@@ -12,8 +17,11 @@
     {"name":"obj_personagem","order":1,"path":"objects/obj_personagem/obj_personagem.yy",},
     {"name":"planeta","order":1,"path":"rooms/planeta/planeta.yy",},
     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
+<<<<<<< Updated upstream
     {"name":"terra","order":1,"path":"rooms/terra/terra.yy",},
     {"name":"AndandoLado","order":2,"path":"sprites/AndandoLado/AndandoLado.yy",},
+=======
+>>>>>>> Stashed changes
     {"name":"BackGroundMenu","order":4,"path":"sprites/BackGroundMenu/BackGroundMenu.yy",},
     {"name":"BackgroundTeste","order":1,"path":"sprites/BackgroundTeste/BackgroundTeste.yy",},
     {"name":"Interagindo","order":3,"path":"sprites/Interagindo/Interagindo.yy",},
