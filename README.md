@@ -1,6 +1,6 @@
 # STARASO
 
-Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A versão atual apresenta o menu inicial e a transição para um cenário planetário. Na tela de abertura, o título aparece como **StaRaros**.
+Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A versão atual apresenta o menu inicial e a transição para a sala de inventário. Na tela de abertura, o título aparece como **StaRaros**.
 
 [![GameMaker](https://img.shields.io/badge/Engine-GameMaker-20252B?style=flat-square&logo=gamemaker&logoColor=white)](https://gamemaker.io/)
 [![GML](https://img.shields.io/badge/Linguagem-GameMaker%20Language-3D5570?style=flat-square)](https://manual.gamemaker.io/)
@@ -9,7 +9,7 @@ Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A ve
 ## O que já está implementado
 
 - Menu inicial com as opções **Jogar** e **Sair**, navegação circular e destaque visual da seleção.
-- Transição de **Jogar** para a sala `planeta`.
+- Transição de **Jogar** para a sala `terra`, onde fica o inventário.
 - Recursos gráficos para o cenário e o menu, além de sprites de astronauta armazenados em `Assests/`.
 
 ## Executar localmente
@@ -39,7 +39,7 @@ Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A ve
 |---|---|
 | [`STARASO/STARASO.yyp`](STARASO/STARASO.yyp) | Arquivo principal do projeto GameMaker. |
 | [`STARASO/objects/obj_menu/`](STARASO/objects/obj_menu/) | Eventos GML que inicializam, desenham e controlam o menu. |
-| [`STARASO/rooms/`](STARASO/rooms/) | Sala inicial `rm_menu` e cenário `planeta`. |
+| [`STARASO/rooms/`](STARASO/rooms/) | Sala inicial `rm_menu`, inventário `terra`, cenário `planeta` e sala de testes `Teste`. |
 | [`STARASO/sprites/`](STARASO/sprites/), [`fonts/`](STARASO/fonts/) e [`tilesets/`](STARASO/tilesets/) | Recursos visuais registrados no GameMaker. |
 | [`Assests/`](Assests/) | Arquivos de imagem do projeto, incluindo os quadros do astronauta. |
 

@@ -42,7 +42,14 @@ switch (estado) {
         sprite_index = AndandoLado;
         image_xscale = -1; 
         image_speed = 0.2;
-		
+
+        if (tecla_inspecionar) {
+            estado = "INSPECIONANDO";
+            image_index = 0;
+            tempo_restante_inspecao = tempo_inspecao;
+        } else if (!tecla_voltar) {
+            estado = "ANDANDO";
+        }
     break;
 
     case "INSPECIONANDO":
