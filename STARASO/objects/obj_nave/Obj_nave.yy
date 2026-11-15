@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{"name":"spr_nave","path":"sprites/spr_nave/spr_nave.yy",},
+  "spriteId":{
+    "name":"spr_nave",
+    "path":"sprites/spr_nave/spr_nave.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
