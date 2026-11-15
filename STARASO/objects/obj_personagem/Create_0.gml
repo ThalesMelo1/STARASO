@@ -1,6 +1,5 @@
 // --- ESTADOS E VELOCIDADE ---
 estado = "ESPERA"; // Começa no modo de espera
-velocidade = 2;
 
 tempo_inspecao = 2.0; 
 tempo_restante_inspecao = 0;
