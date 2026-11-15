@@ -34,9 +34,10 @@ if (item_selecionado != noone) {
 
     if (point_in_rectangle(mx, my, btn_buy_x, btn_buy_y, btn_buy_x + buy_w, btn_buy_y + buy_h)) {
         var st = item_selecionado.struct;
-        if (!st.possui && global.dinheiro >= st.preco) {
+        if (!st.possui && global.dinheiro >= st.preco && global.inventario + st.tamanho <= global.inventario_max) {
             st.possui = true;
             global.dinheiro -= st.preco;
+            global.inventario += st.tamanho;
             item_selecionado = noone;
         }
     }
@@ -105,9 +106,9 @@ for (var i = 0; i < array_length(itens_lista); i++) {
     var item_y = y_base + (i * espacamento) - 5;
     var st = itens_lista[i].struct;
     
-    if (point_in_rectangle(mx, my, btn_x, item_y, btn_x + spr_w, item_y + spr_h)) {
+    if (point_in_rectangle(mx, my, btn_x, item_y, btn_x + 48, item_y + 48)) {
         if (!st.possui) {
             item_selecionado = itens_lista[i];
-        }
+            break;        }
     }
 }

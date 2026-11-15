@@ -79,7 +79,7 @@ for (var i = 0; i < array_length(itens_lista); i++) {
     draw_text(coluna_dir, item_y, status_str + item.nome);
     
     if (!item.struct.possui) {
-        draw_sprite(btn_sprt, 0, btn_x, item_y - 5);
+        draw_sprite_stretched(btn_sprt, 0, btn_x, item_y - 5, 48, 48);
         draw_text(btn_x + 18, item_y, "+");
     }
 }
@@ -149,7 +149,7 @@ if (item_selecionado != noone) {
     var btn_buy_y = pop_y + pop_h - 200;
     var spr_comprar = asset_get_index("btn2_sprt") != -1 ? btn2_sprt : btn_sprt;
 
-    if (global.dinheiro >= st.preco) {
+    if (global.dinheiro >= st.preco && global.inventario + st.tamanho <= global.inventario_max) {
         draw_sprite_ext(spr_comprar, 0, btn_buy_x, btn_buy_y, escala_x, escala_y, 0, c_white, 1);
     } else {
         draw_sprite_ext(spr_comprar, 0, btn_buy_x, btn_buy_y, escala_x, escala_y, 0, c_gray, 1);
