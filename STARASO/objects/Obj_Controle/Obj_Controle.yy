@@ -11,8 +11,8 @@
   "name":"Obj_Controle",
   "overriddenProperties":[],
   "parent":{
-    "name":"Teste",
-    "path":"folders/Teste.yy",
+    "name":"Terra",
+    "path":"folders/Terra.yy",
   },
   "parentObjectId":null,
   "persistent":false,
