@@ -5,7 +5,7 @@ draw_set_valign(fa_middle);
 
 // Pega o centro da tela
 var _x = display_get_gui_width() / 2;
-var _y = display_get_gui_height() / 2;
+var _y = (display_get_gui_height() - 80 * (op_max - 1)) / 2 + 60;
 var _espacamento = 80; // Distância vertical entre cada opção
 
 // Desenha o título do jogo um pouco acima do menu

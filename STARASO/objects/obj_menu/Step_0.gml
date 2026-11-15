@@ -22,6 +22,12 @@ if (_confirmar) {
 			room_goto(Teste);
 			break;
 		case 1:
+			room_goto(terra);
+			break;
+		case 2:
+			room_goto(planeta);
+			break;
+		case 3:
 			game_end();
 			break;
 	}

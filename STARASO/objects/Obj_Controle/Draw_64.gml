@@ -1,3 +1,9 @@
+if (!inventario_aberto) {
+    draw_text_color(20, 20, "[I] Inventory  |  Water: " + string(global.agua)
+        + "  |  Food: " + string(global.comida), c_white, c_white, c_white, c_white, 1);
+    exit;
+}
+
 var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
 
@@ -18,7 +24,7 @@ draw_rectangle(px, py, px + painel_w, py + painel_h, false);
 draw_set_color(c_white);
 draw_rectangle(px, py, px + painel_w, py + painel_h, true);
 
-draw_text(px + 20, py + 20, "INVENTORY");
+draw_text(px + 20, py + 20, "INVENTORY  [I]");
 
 // Barra de Capacidade
 draw_text(px + 20, py + 60, "Capacity");
@@ -123,7 +129,8 @@ if (item_selecionado != noone) {
 
     // Foto maior
     if (sprite_exists(st.sprite)) {
-        draw_sprite_ext(st.sprite, 0, pop_x + 30, pop_y + 70, 2, 2, 0, c_white, 1);
+        var photo_scale = min(100 / sprite_get_width(st.sprite), 100 / sprite_get_height(st.sprite));
+        draw_sprite_ext(st.sprite, 0, pop_x + 30, pop_y + 70, photo_scale, photo_scale, 0, c_white, 1);
     } else {
         draw_set_color(c_dkgray);
         draw_rectangle(pop_x + 30, pop_y + 70, pop_x + 130, pop_y + 170, false);

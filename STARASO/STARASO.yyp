@@ -31,6 +31,12 @@
   },
   "name":"STARASO",
   "resources":[
+    {"id":{"name":"BackgroundTeste","path":"sprites/BackgroundTeste/BackgroundTeste.yy"}},
+    {"id":{"name":"Sprite3","path":"sprites/Sprite3/Sprite3.yy"}},
+    {"id":{"name":"spr_computadorIA","path":"sprites/spr_computadorIA/spr_computadorIA.yy"}},
+    {"id":{"name":"spr_rastreadorMetais","path":"sprites/spr_rastreadorMetais/spr_rastreadorMetais.yy"}},
+    {"id":{"name":"spr_motor","path":"sprites/spr_motor/spr_motor.yy"}},
+    {"id":{"name":"spr_extratorAgua","path":"sprites/spr_extratorAgua/spr_extratorAgua.yy"}},
     {"id": {"name": "MontanhaMeio", "path": "sprites/MontanhaMeio/MontanhaMeio.yy"}},
     {"id": {"name": "MontanhaTras", "path": "sprites/MontanhaTras/MontanhaTras.yy"}},
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
