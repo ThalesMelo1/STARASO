@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings":[
-    {"name":"Terra","order":9,"path":"folders/Terra.yy",},
     {"name":"Personagem Principal","order":6,"path":"folders/Personagem Principal.yy",},
     {"name":"Planetas","order":4,"path":"folders/Planetas.yy",},
+    {"name":"Terra","order":9,"path":"folders/Terra.yy",},
     {"name":"Teste","order":8,"path":"folders/Teste.yy",},
   ],
   "ResourceOrderSettings":[
@@ -17,6 +17,8 @@
     {"name":"BackGroundMenu","order":4,"path":"sprites/BackGroundMenu/BackGroundMenu.yy",},
     {"name":"BackgroundTeste","order":1,"path":"sprites/BackgroundTeste/BackgroundTeste.yy",},
     {"name":"Interagindo","order":3,"path":"sprites/Interagindo/Interagindo.yy",},
+    {"name":"MontanhaMeio","order":5,"path":"sprites/MontanhaMeio/MontanhaMeio.yy",},
+    {"name":"MontanhaTras","order":4,"path":"sprites/MontanhaTras/MontanhaTras.yy",},
     {"name":"SpriteTeste","order":3,"path":"sprites/SpriteTeste/SpriteTeste.yy",},
     {"name":"tilefundodprt","order":2,"path":"sprites/tilefundodprt/tilefundodprt.yy",},
     {"name":"TileSet1","order":2,"path":"tilesets/TileSet1/TileSet1.yy",},

@@ -10,10 +10,10 @@
   },
   "defaultScriptType":0,
   "Folders":[
-    {"$GMFolder":"","%Name":"Terra","folderPath":"folders/Terra.yy","name":"Terra","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Menu","folderPath":"folders/Menu.yy","name":"Menu","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Personagem Principal","folderPath":"folders/Personagem Principal.yy","name":"Personagem Principal","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Planetas","folderPath":"folders/Planetas.yy","name":"Planetas","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Terra","folderPath":"folders/Terra.yy","name":"Terra","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Teste","folderPath":"folders/Teste.yy","name":"Teste","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[
@@ -42,6 +42,8 @@
     {"id":{"name":"BackgroundTeste","path":"sprites/BackgroundTeste/BackgroundTeste.yy",},},
     {"id":{"name":"fundoterra","path":"sprites/fundoterra/fundoterra.yy",},},
     {"id":{"name":"Interagindo","path":"sprites/Interagindo/Interagindo.yy",},},
+    {"id":{"name":"MontanhaMeio","path":"sprites/MontanhaMeio/MontanhaMeio.yy",},},
+    {"id":{"name":"MontanhaTras","path":"sprites/MontanhaTras/MontanhaTras.yy",},},
     {"id":{"name":"ParadoLado","path":"sprites/ParadoLado/ParadoLado.yy",},},
     {"id":{"name":"SpriteTeste","path":"sprites/SpriteTeste/SpriteTeste.yy",},},
     {"id":{"name":"tilefundodprt","path":"sprites/tilefundodprt/tilefundodprt.yy",},},
