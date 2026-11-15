@@ -32,7 +32,7 @@ if (item_selecionado != noone) {
         var st = item_selecionado.struct;
         
         // Valida se tem dinheiro suficiente
-        if (!st.possui && global.dinheiro >= st.preco) {
+        if (!st.possui && global.dinheiro >= st.preco && global.inventario + st.tamanho <= global.inventario_max) {
             st.possui = true;
             global.dinheiro -= st.preco;
             item_selecionado = noone; // Fecha a janela após comprar
@@ -61,7 +61,7 @@ if (point_in_rectangle(mx, my, px + 320, py + 175, px + 320 + spr_w, py + 175 + 
 if (point_in_rectangle(mx, my, px + 250, py + 245, px + 250 + spr_w, py + 245 + spr_h)) {
     if (global.inventario < global.inventario_max) { global.comida += 20; global.inventario += 1; }
 }
-if (point_in_rectangle(mx, my, px + 320, py + 245, px + 320 + spr_w, py + 320 + spr_h)) {
+if (point_in_rectangle(mx, my, px + 320, py + 245, px + 320 + spr_w, py + 245 + spr_h)) {
     if (global.comida >= 20) { global.comida -= 20; global.inventario -= 1; }
 }
 
@@ -77,9 +77,9 @@ for (var i = 0; i < array_length(itens_lista); i++) {
     var item_y = y_base + (i * espacamento) - 5;
     var st = itens_lista[i].struct;
     
-    if (point_in_rectangle(mx, my, btn_x, item_y, btn_x + spr_w, item_y + spr_h)) {
+    if (point_in_rectangle(mx, my, btn_x, item_y, btn_x + 32, item_y + 32)) {
         if (!st.possui) {
             item_selecionado = itens_lista[i]; // Abre a janela do item!
-        }
+            break;        }
     }
 }

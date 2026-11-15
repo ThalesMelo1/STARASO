@@ -14,13 +14,8 @@
     {"name":"BackgroundTeste","order":1,"path":"sprites/BackgroundTeste/BackgroundTeste.yy",},
     {"name":"btn_sprt","order":10,"path":"sprites/btn_sprt/btn_sprt.yy",},
     {"name":"Interagindo","order":3,"path":"sprites/Interagindo/Interagindo.yy",},
-<<<<<<< Updated upstream
     {"name":"Sprite3","order":5,"path":"sprites/Sprite3/Sprite3.yy",},
-=======
-    {"name":"MontanhaMeio","order":5,"path":"sprites/MontanhaMeio/MontanhaMeio.yy",},
-    {"name":"MontanhaTras","order":4,"path":"sprites/MontanhaTras/MontanhaTras.yy",},
     {"name":"spr_mockup","order":11,"path":"sprites/spr_mockup/spr_mockup.yy",},
->>>>>>> Stashed changes
     {"name":"SpriteTeste","order":3,"path":"sprites/SpriteTeste/SpriteTeste.yy",},
     {"name":"TileSet1","order":2,"path":"tilesets/TileSet1/TileSet1.yy",},
     {"name":"TileSet2","order":1,"path":"tilesets/TileSet2/TileSet2.yy",},

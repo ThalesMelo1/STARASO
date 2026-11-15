@@ -55,7 +55,7 @@ for (var i = 0; i < array_length(itens_lista); i++) {
     
     // Botão de Detalhes (...) ou (+)
     if (!item.struct.possui) {
-        draw_sprite(btn_sprt, 0, btn_x, item_y - 5);
+        draw_sprite_stretched(btn_sprt, 0, btn_x, item_y - 5, 32, 32);
         draw_text(btn_x + 18, item_y, "+");
     }
 }
@@ -122,7 +122,7 @@ if (item_selecionado != noone) {
     var btn_buy_y2 = btn_buy_y1 + 35;
 
     // Altera cor do botão de compra se tiver dinheiro suficiente
-    if (global.dinheiro >= st.preco) {
+    if (global.dinheiro >= st.preco && global.inventario + st.tamanho <= global.inventario_max) {
         draw_set_color(c_green);
     } else {
         draw_set_color(c_gray);
