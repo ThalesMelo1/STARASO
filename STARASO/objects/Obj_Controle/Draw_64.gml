@@ -74,10 +74,10 @@ var espacamento = 50;
 for (var i = 0; i < array_length(itens_lista); i++) {
     var item = itens_lista[i];
     var item_y = y_base + (i * espacamento);
-    
+
     var status_str = item.struct.possui ? "[X] " : "[ ] ";
     draw_text(coluna_dir, item_y, status_str + item.nome);
-    
+
     if (!item.struct.possui) {
         draw_sprite_stretched(btn_sprt, 0, btn_x, item_y - 5, 48, 48);
         draw_text(btn_x + 18, item_y, "+");
@@ -117,10 +117,10 @@ if (item_selecionado != noone) {
     draw_text(close_btn_x + 19, close_btn_y + 8, "X");
 
     var st = item_selecionado.struct;
-    
+
     // Título do Item
     draw_text(pop_x + 30, pop_y + 25, item_selecionado.nome);
-    
+
     // Foto maior
     if (sprite_exists(st.sprite)) {
         draw_sprite_ext(st.sprite, 0, pop_x + 30, pop_y + 70, 2, 2, 0, c_white, 1);
@@ -134,31 +134,29 @@ if (item_selecionado != noone) {
     // Detalhes
     draw_text(pop_x + 160, pop_y + 75, "Price: $" + string(st.preco));
     draw_text(pop_x + 160, pop_y + 115, "Size: " + string(st.tamanho) + " slots");
-    
+
     // Descrição
     draw_text_ext(pop_x + 20, pop_y + 220, st.desc, 33, pop_w - 40);
 
     // === BOTÃO COMPRAR ===
-    var escala_x = 5;
-    var escala_y = 5.5;
+    var buy_w = 200;
+    var buy_h = 56;
 
-    var buy_w = spr_w * escala_x;
-    var buy_h = spr_h * escala_y;
 
     var btn_buy_x = pop_x + (pop_w / 2) - (buy_w / 2);
-    var btn_buy_y = pop_y + pop_h - 200;
-    var spr_comprar = asset_get_index("btn2_sprt") != -1 ? btn2_sprt : btn_sprt;
+    var btn_buy_y = pop_y + pop_h - buy_h - 16;
+
 
     if (global.dinheiro >= st.preco && global.inventario + st.tamanho <= global.inventario_max) {
-        draw_sprite_ext(spr_comprar, 0, btn_buy_x, btn_buy_y, escala_x, escala_y, 0, c_white, 1);
+        draw_sprite_stretched_ext(btn2_sprt, 0, btn_buy_x, btn_buy_y, buy_w, buy_h, c_white, 1);
     } else {
-        draw_sprite_ext(spr_comprar, 0, btn_buy_x, btn_buy_y, escala_x, escala_y, 0, c_gray, 1);
+        draw_sprite_stretched_ext(btn2_sprt, 0, btn_buy_x, btn_buy_y, buy_w, buy_h, c_gray, 1);
     }
 
     draw_set_halign(fa_center);
     draw_set_valign(fa_middle);
     draw_set_color(c_white);
-    draw_text(btn_buy_x + (buy_w / 2), btn_buy_y + (buy_h / 2.2), "BUY");
+    draw_text(btn_buy_x + (buy_w / 2), btn_buy_y + (buy_h / 2), "BUY");
 
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);

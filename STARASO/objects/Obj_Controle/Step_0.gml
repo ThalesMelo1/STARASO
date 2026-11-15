@@ -1,4 +1,3 @@
-
 // Limites mínimos e máximos
 global.agua = clamp(global.agua, 0, 999);
 global.comida = clamp(global.comida, 0, 999);
