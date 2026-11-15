@@ -22,8 +22,6 @@ switch (estado) {
 	break;
 
     case "ANDANDO":
-		show_debug_message("ESTOU ANDANDO! X = " + string(x));
-        x += velocidade;
         show_debug_message("Estado atual: " + estado);
         sprite_index = AndandoLado;
         image_xscale = 1; 
@@ -40,7 +38,6 @@ switch (estado) {
     break;
 
     case "VOLTANDO":
-        x -= velocidade;
         show_debug_message("Estado atual: " + estado);
         sprite_index = AndandoLado;
         image_xscale = -1; 

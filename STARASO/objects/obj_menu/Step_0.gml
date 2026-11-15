@@ -19,7 +19,7 @@ if (_cima) {
 if (_confirmar) {
 	switch (index) {
 		case 0:
-			room_goto(terra);
+			room_goto(Teste);
 			break;
 		case 1:
 			game_end();
