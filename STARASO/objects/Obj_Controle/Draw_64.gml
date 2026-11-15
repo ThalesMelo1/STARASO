@@ -1,3 +1,9 @@
+if (!inventario_aberto) {
+    draw_text_color(20, 20, "[I] Inventory  |  Water: " + string(global.agua)
+        + "  |  Food: " + string(global.comida), c_white, c_white, c_white, c_white, 1);
+    exit;
+}
+
 var gui_w = display_get_gui_width();
 var gui_h = display_get_gui_height();
 
@@ -18,7 +24,7 @@ draw_rectangle(px, py, px + painel_w, py + painel_h, false);
 draw_set_color(c_white);
 draw_rectangle(px, py, px + painel_w, py + painel_h, true);
 
-draw_text(px + 20, py + 20, "INVENTORY");
+draw_text(px + 20, py + 20, "INVENTORY  [I]");
 
 // Barra de Capacidade
 draw_text(px + 20, py + 60, "Capacity");

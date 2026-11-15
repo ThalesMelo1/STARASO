@@ -6,6 +6,7 @@ global.dinheiro = 50;
 global.gasolina = 5;
 global.gasolina_max = 10;
 
+inventario_aberto = (room != Teste);
 item_selecionado = noone;
 
 // Estruturas corrigidas
