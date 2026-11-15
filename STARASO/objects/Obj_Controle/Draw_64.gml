@@ -11,10 +11,6 @@ var py = (gui_h - painel_h) / 2;
 
 var coluna_dir = px + 500;
 
-
-var px = (gui_w - painel_w) / 2;
-var py = (gui_h - painel_h) / 2;
-
 // Fundo
 draw_set_color(make_color_rgb(30,30,40));
 draw_rectangle(px, py, px+painel_w, py+painel_h, false);
@@ -94,19 +90,19 @@ draw_text(px+340, py+255, "-");
 draw_text(coluna_dir, py + 20, "ITENS");
 
 draw_text(coluna_dir, py + 60,
-          "[ ] Filtro de Agua");
+          (global.filtro_agua.possui ? "[x] " : "[ ] ") + "Filtro de Agua");
 
 draw_text(coluna_dir, py + 95,
-          "[ ] Computador IA");
+          (global.computador_ia.possui ? "[x] " : "[ ] ") + "Computador IA");
 
 draw_text(coluna_dir, py + 130,
-          "[ ] Rastreador");
+          (global.rastreador.possui ? "[x] " : "[ ] ") + "Rastreador");
 
 draw_text(coluna_dir, py + 165,
-          "[ ] Motor");
+          (global.motor.possui ? "[x] " : "[ ] ") + "Motor");
 
 draw_text(coluna_dir, py + 200,
-          "[ ] Extrator");
+          (global.extrator.possui ? "[x] " : "[ ] ") + "Extrator");
 		  
 draw_text(coluna_dir, py + 250,
           "Dinheiro: " + string(global.dinheiro));
