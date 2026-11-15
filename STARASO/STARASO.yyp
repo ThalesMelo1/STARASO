@@ -37,7 +37,7 @@
     {"id":{"name":"obj_montanha_frente","path":"objects/obj_montanha_frente/obj_montanha_frente.yy",},},
     {"id":{"name":"obj_montanha_meio","path":"objects/obj_montanha_meio/obj_montanha_meio.yy",},},
     {"id":{"name":"obj_montanha_tras","path":"objects/obj_montanha_tras/obj_montanha_tras.yy",},},
-    {"id":{"name":"Obj_nave","path":"objects/obj_nave/Obj_nave.yy",},},
+    {"id":{"name":"Obj_nave","path":"objects/Obj_nave/Obj_nave.yy",},},
     {"id":{"name":"obj_personagem","path":"objects/obj_personagem/obj_personagem.yy",},},
     {"id":{"name":"planeta","path":"rooms/planeta/planeta.yy",},},
     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
