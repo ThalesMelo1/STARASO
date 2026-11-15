@@ -1,6 +1,6 @@
 {
   "$GMSprite":"v2",
-  "%Name":"PersonagemPrincipal",
+  "%Name":"AndandoLado",
   "bboxMode":0,
   "bbox_bottom":31,
   "bbox_left":5,
@@ -12,17 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"bab67342-cfb4-4925-b29a-1436a0166198","name":"bab67342-cfb4-4925-b29a-1436a0166198","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"v1","%Name":"89990f18-d29a-4fc2-ac08-5b6c40fd4df6","name":"89990f18-d29a-4fc2-ac08-5b6c40fd4df6","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"eb6d9a8e-a5e3-4f56-9796-72709cb34c37","name":"eb6d9a8e-a5e3-4f56-9796-72709cb34c37","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"5436d9e4-3e08-44b2-938c-1f8f8ef9ea49","blendMode":0,"displayName":"default","isLocked":false,"name":"5436d9e4-3e08-44b2-938c-1f8f8ef9ea49","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"30c0acb4-8748-46c3-b736-4f0d11a5da0a","blendMode":0,"displayName":"default","isLocked":false,"name":"30c0acb4-8748-46c3-b736-4f0d11a5da0a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"PersonagemPrincipal",
+  "name":"AndandoLado",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -34,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"v1",
-    "%Name":"PersonagemPrincipal",
+    "%Name":"AndandoLado",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -50,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":2.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -58,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"PersonagemPrincipal",
+    "name":"AndandoLado",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -70,11 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bab67342-cfb4-4925-b29a-1436a0166198","path":"sprites/PersonagemPrincipal/PersonagemPrincipal.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1f9301cb-436c-4201-9714-7e4ee1a2fd11","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"89990f18-d29a-4fc2-ac08-5b6c40fd4df6","path":"sprites/PersonagemPrincipal/PersonagemPrincipal.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a6fdf5a0-d9b2-48b1-99b1-a253956d9e2b","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"eb6d9a8e-a5e3-4f56-9796-72709cb34c37","path":"sprites/AndandoLado/AndandoLado.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"a9b28d95-e3c2-4b2e-8a97-c8b57cf9bc7a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

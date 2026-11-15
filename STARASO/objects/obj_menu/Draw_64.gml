@@ -10,13 +10,13 @@ var _espacamento = 80; // Distância vertical entre cada opção
 
 // Desenha o título do jogo um pouco acima do menu
 draw_set_color(c_white);
-draw_text(_x, _y - 100, "StaRaros");
+draw_text_transformed(_x, _y - 120, "StaRaros", 2, 2, 0);
 
 // Loop para desenhar todas as opções do array
 for (var i = 0; i < op_max; i++) {
     // Destaca em amarelo a opção selecionada
     if (index == i) {
-        draw_set_color(c_yellow);
+        draw_set_color(c_red);
     } else {
         draw_set_color(c_white);
     }

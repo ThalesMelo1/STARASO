@@ -1,6 +1,6 @@
 // Lista de opções do menu
 
-opcoes = ["Jogar", "Sair"];
+opcoes = ["Play", "Exit"];
 
 index = 0;
 

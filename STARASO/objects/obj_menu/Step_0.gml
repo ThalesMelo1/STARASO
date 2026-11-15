@@ -7,17 +7,19 @@ var _confirmar = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk_s
 if (_baixo) {
     index++;
     if (index >= op_max) index = 0; // Volta para o topo
+	show_debug_message("Index atual: " + string(index));
 }
 
 if (_cima) {
     index--;
     if (index < 0) index = op_max - 1; // Vai para o final
+	show_debug_message("Index atual: " + string(index));
 }
 
 if (_confirmar) {
 	switch (index) {
 		case 0:
-			room_goto(planeta);
+			room_goto(Teste);
 			break;
 		case 1:
 			game_end();
