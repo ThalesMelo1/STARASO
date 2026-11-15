@@ -38,9 +38,10 @@ if point_in_rectangle(
     px + 370, py + 225
 )
 {
-    global.agua -= 20;
-	if (global.agua >= 0){
-	global.inventario -=1; }
+    if (global.agua >= 20) {
+        global.agua -= 20;
+        global.inventario -= 1;
+    }
 }
 
 
@@ -67,9 +68,10 @@ if point_in_rectangle(
     px + 370, py + 295
 )
 {
-    global.comida -= 20;
-	if (global.comida >= 0){
-	global.inventario -= 1; }
+    if (global.comida >= 20) {
+        global.comida -= 20;
+        global.inventario -= 1;
+    }
 }
 
 
