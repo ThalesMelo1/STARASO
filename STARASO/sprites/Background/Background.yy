@@ -25,13 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-<<<<<<< Updated upstream
     "name":"Planetas",
     "path":"folders/Planetas.yy",
-=======
-    "name":"Planeta",
-    "path":"folders/Planeta.yy",
->>>>>>> Stashed changes
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
