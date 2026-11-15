@@ -1,0 +1,1 @@
+fator_parallax = 0.35;

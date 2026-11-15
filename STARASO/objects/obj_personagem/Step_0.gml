@@ -6,71 +6,68 @@ var tecla_voltar = keyboard_check(vk_left);
 switch (estado) {
     
     case "ESPERA":
-        // Mantém o sprite parado durante a contagem
-        sprite_index = ParadoLado;
-        image_speed = 0;
-        
-        // Reduz o tempo a cada frame
-        tempo_espera -= 1;
-        
-        // Quando o tempo acabar, muda para o estado de andar
-        if (tempo_espera <= 0) {
-            estado = "ANDANDO";
-        }
-    break;
+    sprite_index = ParadoLado;
+    image_speed = 0;
+
+    tempo_espera -= 1;
+
+    show_debug_message(
+        "ESPERA | Tempo restante: " + string(tempo_espera)
+    );
+
+    if (tempo_espera <= 0) {
+        estado = "ANDANDO";
+        show_debug_message("MUDOU PARA ANDANDO!");
+    }
+	break;
 
     case "ANDANDO":
-        // Move o personagem para a frente
+		show_debug_message("ESTOU ANDANDO! X = " + string(x));
         x += velocidade;
-        
-        // Aplica o sprite de andar e garante que olha para a direita
+        show_debug_message("Estado atual: " + estado);
         sprite_index = AndandoLado;
         image_xscale = 1; 
-        image_speed = 0.2; // Velocidade da animação dos 2 quadros
+        image_speed = 0.2; 
         
-        // Transições
-        if (tecla_inspecionar) {
-            estado = "INSPECIONANDO";
-        } else if (tecla_voltar) {
-            estado = "VOLTANDO";
-        }
+       if (tecla_inspecionar) {
+			estado = "INSPECIONANDO";
+			image_index = 0;
+			tempo_restante_inspecao = tempo_inspecao;
+		}
+		else if (tecla_voltar) {
+			estado = "VOLTANDO";
+		}
     break;
 
     case "VOLTANDO":
-        // Move o personagem para trás
         x -= velocidade;
-        
-        // Usa o mesmo sprite de andar, mas espelhado para a esquerda
+        show_debug_message("Estado atual: " + estado);
         sprite_index = AndandoLado;
         image_xscale = -1; 
         image_speed = 0.2;
-        
-        // Se soltar a tecla esquerda, volta a andar para frente
-        if (!tecla_voltar) {
-            estado = "ANDANDO";
-        }
-        // Permite inspecionar mesmo andando para trás
-        if (tecla_inspecionar) {
-            estado = "INSPECIONANDO";
-        }
+		
     break;
 
     case "INSPECIONANDO":
-        // Troca para o sprite parado
-        sprite_index = Interagindo;
-        
-        // Define a velocidade da animação (0.1 ou 0.15 para não ficar rápido demais)
-        image_speed = 0.2; 
-        
-        // Se quiser que a animação de 2 quadros pare no último quadro e não fique loopando infinitamente:
-        if (image_index >= image_number - 1) {
-            image_speed = 0; // Trava no último quadro
-            image_index = image_number - 1;
-        }
-        
-        // Aperta espaço novamente para sair da inspeção e voltar a andar
-        if (tecla_inspecionar) {
-            estado = "ANDANDO";
-        }
-		break;
+
+    sprite_index = Interagindo;
+    image_speed = 0.2;
+
+    show_debug_message("Estado atual: " + estado);
+
+    // Desconta o tempo real transcorrido
+    tempo_restante_inspecao -= delta_time / 1000000;
+
+    // Trava a animação no último quadro
+    if (image_index >= image_number - 1) {
+        image_speed = 0;
+        image_index = image_number - 1;
+    }
+
+    // Retorna automaticamente quando o tempo acabar
+    if (tempo_restante_inspecao <= 0) {
+        estado = "ANDANDO";
+    }
+
+	break;
 }
