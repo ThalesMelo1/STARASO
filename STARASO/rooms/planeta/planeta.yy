@@ -20,8 +20,8 @@
   ],
   "name":"planeta",
   "parent":{
-    "name":"STARASO",
-    "path":"STARASO.yyp",
+    "name":"Planeta",
+    "path":"folders/Planeta.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
