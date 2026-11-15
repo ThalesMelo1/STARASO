@@ -1,0 +1,288 @@
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+index ebd23fc..0000000
+--- a/.gitignore
++++ /dev/null
+@@ -1,3 +0,0 @@
+-STARASO/tilesets/TileSet2/TileSet2.yy
+-STARASO/STARASO.yyp
+-STARASO/STARASO.resource_order
+diff --git a/README.md b/README.md
+index 8148c64..8f5980d 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # STARASO
+ 
+-Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A versão atual apresenta o menu inicial e a transição para um cenário planetário. Na tela de abertura, o título aparece como **StaRaros**.
++Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A versão atual apresenta o menu inicial e a transição para a sala de inventário. Na tela de abertura, o título aparece como **StaRaros**.
+ 
+ [![GameMaker](https://img.shields.io/badge/Engine-GameMaker-20252B?style=flat-square&logo=gamemaker&logoColor=white)](https://gamemaker.io/)
+ [![GML](https://img.shields.io/badge/Linguagem-GameMaker%20Language-3D5570?style=flat-square)](https://manual.gamemaker.io/)
+@@ -9,7 +9,7 @@ Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A ve
+ ## O que já está implementado
+ 
+ - Menu inicial com as opções **Jogar** e **Sair**, navegação circular e destaque visual da seleção.
+-- Transição de **Jogar** para a sala `planeta`.
++- Transição de **Jogar** para a sala `terra`, onde fica o inventário.
+ - Recursos gráficos para o cenário e o menu, além de sprites de astronauta armazenados em `Assests/`.
+ 
+ ## Executar localmente
+@@ -39,7 +39,7 @@ Protótipo de jogo 2D com temática espacial desenvolvido em **GameMaker**. A ve
+ |---|---|
+ | [`STARASO/STARASO.yyp`](STARASO/STARASO.yyp) | Arquivo principal do projeto GameMaker. |
+ | [`STARASO/objects/obj_menu/`](STARASO/objects/obj_menu/) | Eventos GML que inicializam, desenham e controlam o menu. |
+-| [`STARASO/rooms/`](STARASO/rooms/) | Sala inicial `rm_menu` e cenário `planeta`. |
++| [`STARASO/rooms/`](STARASO/rooms/) | Sala inicial `rm_menu`, inventário `terra`, cenário `planeta` e sala de testes `Teste`. |
+ | [`STARASO/sprites/`](STARASO/sprites/), [`fonts/`](STARASO/fonts/) e [`tilesets/`](STARASO/tilesets/) | Recursos visuais registrados no GameMaker. |
+ | [`Assests/`](Assests/) | Arquivos de imagem do projeto, incluindo os quadros do astronauta. |
+ 
+diff --git a/STARASO/STARASO.resource_order b/STARASO/STARASO.resource_order
+index 8a7efaf..76eee93 100644
+--- a/STARASO/STARASO.resource_order
++++ b/STARASO/STARASO.resource_order
+@@ -10,7 +10,7 @@
+   "ResourceOrderSettings":[
+     {"name":"Obj_Controle","order":3,"path":"objects/Obj_Controle/Obj_Controle.yy",},
+     {"name":"obj_menu","order":3,"path":"objects/obj_menu/obj_menu.yy",},
+-    {"name":"Obj_nave","order":2,"path":"objects/Obj_nave/Obj_nave.yy",},
++    {"name":"Obj_nave","order":2,"path":"objects/obj_nave/Obj_nave.yy",},
+     {"name":"obj_personagem","order":1,"path":"objects/obj_personagem/obj_personagem.yy",},
+     {"name":"planeta","order":1,"path":"rooms/planeta/planeta.yy",},
+     {"name":"rm_menu","order":1,"path":"rooms/rm_menu/rm_menu.yy",},
+diff --git a/STARASO/STARASO.yyp b/STARASO/STARASO.yyp
+index 8a9eac4..a7e3604 100644
+--- a/STARASO/STARASO.yyp
++++ b/STARASO/STARASO.yyp
+@@ -37,7 +37,7 @@
+     {"id":{"name":"obj_montanha_frente","path":"objects/obj_montanha_frente/obj_montanha_frente.yy",},},
+     {"id":{"name":"obj_montanha_meio","path":"objects/obj_montanha_meio/obj_montanha_meio.yy",},},
+     {"id":{"name":"obj_montanha_tras","path":"objects/obj_montanha_tras/obj_montanha_tras.yy",},},
+-    {"id":{"name":"Obj_nave","path":"objects/Obj_nave/Obj_nave.yy",},},
++    {"id":{"name":"Obj_nave","path":"objects/obj_nave/Obj_nave.yy",},},
+     {"id":{"name":"obj_personagem","path":"objects/obj_personagem/obj_personagem.yy",},},
+     {"id":{"name":"planeta","path":"rooms/planeta/planeta.yy",},},
+     {"id":{"name":"rm_menu","path":"rooms/rm_menu/rm_menu.yy",},},
+@@ -46,7 +46,7 @@
+     {"id":{"name":"AndandoLado","path":"sprites/AndandoLado/AndandoLado.yy",},},
+     {"id":{"name":"Background","path":"sprites/Background/Background.yy",},},
+     {"id":{"name":"BackGroundMenu","path":"sprites/BackGroundMenu/BackGroundMenu.yy",},},
+-    {"id":{"name":"fundoterra","path":"sprites/fundoterra/fundoterra.yy",},},
++    {"id":{"name":"fundoterra","path":"sprites/fundoTerra/fundoterra.yy",},},
+     {"id":{"name":"Interagindo","path":"sprites/Interagindo/Interagindo.yy",},},
+     {"id":{"name":"montanha_frente","path":"sprites/montanha_frente/montanha_frente.yy",},},
+     {"id":{"name":"montanha_meio","path":"sprites/montanha_meio/montanha_meio.yy",},},
+diff --git a/STARASO/objects/Obj_Controle/Create_0.gml b/STARASO/objects/Obj_Controle/Create_0.gml
+index 40ba21d..8ddacf1 100644
+--- a/STARASO/objects/Obj_Controle/Create_0.gml
++++ b/STARASO/objects/Obj_Controle/Create_0.gml
+@@ -9,35 +9,29 @@ global.dinheiro = 15;
+ global.filtro_agua = {
+     possui : false,
+     tamanho : 3,
+-	preco: 15,
+-	ja: false
++	preco: 15
+ };
+ 
+ global.computador_ia = {
+     possui : false,
+     tamanho : 3,
+-	preco: 15,
+-	ja: false
++	preco: 15
+ };
+ 
+ global.rastreador = {
+     possui : false,
+     tamanho : 2,
+-	preco: 15,
+-	ja: false
+-	
++	preco: 15
+ };
+ 
+ global.motor = {
+     possui : false,
+     tamanho : 4,
+-	preco: 15,
+-	ja: false
++	preco: 15
+ };
+ 
+ global.extrator = {
+     possui : false,
+     tamanho : 3,
+-	preco: 15,
+-	ja: false
++	preco: 15
+ };
+\ No newline at end of file
+diff --git a/STARASO/objects/Obj_Controle/Draw_64.gml b/STARASO/objects/Obj_Controle/Draw_64.gml
+index 8f56072..e9307ee 100644
+--- a/STARASO/objects/Obj_Controle/Draw_64.gml
++++ b/STARASO/objects/Obj_Controle/Draw_64.gml
+@@ -11,10 +11,6 @@ var py = (gui_h - painel_h) / 2;
+ 
+ var coluna_dir = px + 500;
+ 
+-
+-var px = (gui_w - painel_w) / 2;
+-var py = (gui_h - painel_h) / 2;
+-
+ // Fundo
+ draw_set_color(make_color_rgb(30,30,40));
+ draw_rectangle(px, py, px+painel_w, py+painel_h, false);
+@@ -94,19 +90,19 @@ draw_text(px+340, py+255, "-");
+ draw_text(coluna_dir, py + 20, "ITENS");
+ 
+ draw_text(coluna_dir, py + 60,
+-          "[ ] Filtro de Agua");
++          (global.filtro_agua.possui ? "[x] " : "[ ] ") + "Filtro de Agua");
+ 
+ draw_text(coluna_dir, py + 95,
+-          "[ ] Computador IA");
++          (global.computador_ia.possui ? "[x] " : "[ ] ") + "Computador IA");
+ 
+ draw_text(coluna_dir, py + 130,
+-          "[ ] Rastreador");
++          (global.rastreador.possui ? "[x] " : "[ ] ") + "Rastreador");
+ 
+ draw_text(coluna_dir, py + 165,
+-          "[ ] Motor");
++          (global.motor.possui ? "[x] " : "[ ] ") + "Motor");
+ 
+ draw_text(coluna_dir, py + 200,
+-          "[ ] Extrator");
++          (global.extrator.possui ? "[x] " : "[ ] ") + "Extrator");
+ 		  
+ draw_text(coluna_dir, py + 250,
+           "Dinheiro: " + string(global.dinheiro));
+diff --git a/STARASO/objects/Obj_Controle/Mouse_53.gml b/STARASO/objects/Obj_Controle/Mouse_53.gml
+index 425927a..4e3197e 100644
+--- a/STARASO/objects/Obj_Controle/Mouse_53.gml
++++ b/STARASO/objects/Obj_Controle/Mouse_53.gml
+@@ -79,6 +79,17 @@ if point_in_rectangle(
+ global.agua = clamp(global.agua, 0, 999);
+ global.comida = clamp(global.comida, 0, 999);
+ 
++var comprar_item = function(_item) {
++    if (_item.possui || global.dinheiro < _item.preco ||
++        global.inventario + _item.tamanho > global.inventario_max) {
++        return;
++    }
++
++    _item.possui = true;
++    global.dinheiro -= _item.preco;
++    global.inventario += _item.tamanho;
++};
++
+ //Itens
+ 
+ 
+@@ -87,11 +98,9 @@ if point_in_rectangle(
+     mx, my,
+     btn_x1, py + 55,
+     btn_x2, py + 85
+-) && (global.dinheiro >= global.filtro_agua.preco)
++)
+ {
+-    global.filtro_agua.possui = true;
+-	global.dinheiro -= global.filtro_agua.preco;
+-	
++    comprar_item(global.filtro_agua);
+ }
+ 
+ // IA
+@@ -101,7 +110,7 @@ if point_in_rectangle(
+     btn_x2, py + 130
+ )
+ {
+-    global.computador_ia.possui = true;
++    comprar_item(global.computador_ia);
+ }
+ 
+ // RASTREADOR
+@@ -111,7 +120,7 @@ if point_in_rectangle(
+     btn_x2, py + 175
+ )
+ {
+-    global.rastreador.possui = true;
++    comprar_item(global.rastreador);
+ }
+ 
+ // MOTOR
+@@ -121,7 +130,7 @@ if point_in_rectangle(
+     btn_x2, py + 220
+ )
+ {
+-    global.motor.possui = true;
++    comprar_item(global.motor);
+ }
+ 
+ // EXTRATOR
+@@ -131,5 +140,5 @@ if point_in_rectangle(
+     btn_x2, py + 265
+ )
+ {
+-    global.extrator.possui = true;
++    comprar_item(global.extrator);
+ }
+\ No newline at end of file
+diff --git a/STARASO/objects/Obj_Controle/Step_0.gml b/STARASO/objects/Obj_Controle/Step_0.gml
+index 09bfd00..586116e 100644
+--- a/STARASO/objects/Obj_Controle/Step_0.gml
++++ b/STARASO/objects/Obj_Controle/Step_0.gml
+@@ -1,19 +1,3 @@
+-if(global.filtro_agua.possui == true) && (global.filtro_agua.ja == false) {
+-	global.inventario += global.filtro_agua.tamanho;
+-	global.filtro_agua.ja = true;
+-}
+-if(global.computador_ia.possui == true) && (global.computador_ia.ja == false) {
+-	global.inventario += global.computador_ia.tamanho;
+-	global.computador_ia.ja = true;
+-}
+-if(global.rastreador.possui == true) && (global.rastreador.ja == false) {
+-	global.inventario += global.rastreador.tamanho;
+-	global.rastreador.ja = true;
+-}
+-
+-
+-// ---------------------
+-
+ if(global.agua < 0) {
+ 	global.agua = 0;
+ }
+diff --git a/STARASO/objects/obj_personagem/Step_0.gml b/STARASO/objects/obj_personagem/Step_0.gml
+index 74d67b0..4e3aac8 100644
+--- a/STARASO/objects/obj_personagem/Step_0.gml
++++ b/STARASO/objects/obj_personagem/Step_0.gml
+@@ -45,7 +45,14 @@ switch (estado) {
+         sprite_index = AndandoLado;
+         image_xscale = -1; 
+         image_speed = 0.2;
+-		
++
++        if (tecla_inspecionar) {
++            estado = "INSPECIONANDO";
++            image_index = 0;
++            tempo_restante_inspecao = tempo_inspecao;
++        } else if (!tecla_voltar) {
++            estado = "ANDANDO";
++        }
+     break;
+ 
+     case "INSPECIONANDO":
+diff --git a/STARASO/rooms/terra/terra.yy b/STARASO/rooms/terra/terra.yy
+index c31849b..741b71b 100644
+--- a/STARASO/rooms/terra/terra.yy
++++ b/STARASO/rooms/terra/terra.yy
+@@ -13,7 +13,7 @@
+     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
+         {"$GMRInstance":"v4","%Name":"inst_77B16E25","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_77B16E25","objectId":{"name":"Obj_Controle","path":"objects/Obj_Controle/Obj_Controle.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":736.0,"y":416.0,},
+       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
+-    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"fundoterra","path":"sprites/fundoterra/fundoterra.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
++    {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":30.0,"animationSpeedType":0,"colour":4294967295,"depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":true,"hspeed":0.0,"htiled":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":{"name":"fundoterra","path":"sprites/fundoTerra/fundoterra.yy",},"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
+   ],
+   "name":"terra",
+   "parent":{
