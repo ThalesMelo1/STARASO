@@ -1,5 +1,6 @@
 {
   "FolderOrderSettings":[
+    {"name":"Assets","order":10,"path":"folders/Assets.yy",},
     {"name":"Personagem Principal","order":6,"path":"folders/Personagem Principal.yy",},
     {"name":"PersonagemPrincipal","order":4,"path":"folders/PersonagemPrincipal.yy",},
     {"name":"Planeta","order":5,"path":"folders/Planeta.yy",},
@@ -17,7 +18,11 @@
     {"name":"terra","order":1,"path":"rooms/terra/terra.yy",},
     {"name":"AndandoLado","order":2,"path":"sprites/AndandoLado/AndandoLado.yy",},
     {"name":"BackGroundMenu","order":4,"path":"sprites/BackGroundMenu/BackGroundMenu.yy",},
+    {"name":"btn2_sprt","order":2,"path":"sprites/btn2_sprt/btn2_sprt.yy",},
     {"name":"Interagindo","order":3,"path":"sprites/Interagindo/Interagindo.yy",},
+    {"name":"spr_filtroAgua","order":3,"path":"sprites/spr_filtroAgua/spr_filtroAgua.yy",},
+    {"name":"spr_mockup","order":1,"path":"sprites/spr_mockup/spr_mockup.yy",},
+    {"name":"spr_nave","order":4,"path":"sprites/spr_nave/spr_nave.yy",},
     {"name":"SpriteTeste","order":3,"path":"sprites/SpriteTeste/SpriteTeste.yy",},
     {"name":"tilefundodprt","order":2,"path":"sprites/tilefundodprt/tilefundodprt.yy",},
     {"name":"TileSet1","order":2,"path":"tilesets/TileSet1/TileSet1.yy",},
